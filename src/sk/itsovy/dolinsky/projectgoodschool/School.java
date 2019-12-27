@@ -1,5 +1,6 @@
 package sk.itsovy.dolinsky.projectgoodschool;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,10 +12,12 @@ public class School implements SchoolStat {
 	private int count;
 
 	public School() {
+		list = new ArrayList<>();
 	}
 
 	public void addStudent(Student student) {
-
+		list.add(student);
+		count++;
 	}
 
 	public int getCount() {
