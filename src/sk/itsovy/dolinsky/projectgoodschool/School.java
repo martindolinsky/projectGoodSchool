@@ -1,6 +1,7 @@
 package sk.itsovy.dolinsky.projectgoodschool;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -24,8 +25,19 @@ public class School implements SchoolStat {
 		return count;
 	}
 
-	public int getAbsence() {
-		return 0;
+	public void printList() {
+		for (Student student:list) {
+			System.out.println(
+					student.getFullName()
+					+ " "
+					+ student.getG_Mat()
+					+ " "
+					+ student.getG_Eng()
+					+ " " + student.getG_Inf()
+					+ " " + student.getAbsence()
+			);
+
+		}
 	}
 
 	@Override
@@ -60,7 +72,15 @@ public class School implements SchoolStat {
 
 	@Override
 	public List getListSortedByLastNameAsc() {
-		return null;
+		for (int i = 0; i < list.size() - 1; i++) {
+			for (int j = i + 1; j < list.size(); j++) {
+				if (list.get(j).getLastName().compareToIgnoreCase(list.get(i).getLastName()) <= 0
+						&& list.get(j).getFirstName().compareToIgnoreCase(list.get(i).getFirstName()) <= 0) {
+					list.set(i,list.get(j));
+				}
+			}
+		}
+		return list;
 	}
 
 	@Override
