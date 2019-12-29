@@ -33,7 +33,7 @@ public class Student extends Person{
 		return absence;
 	}
 
-	public double getAverageGrade() {
+	protected double getAverageGrade() {
 		return (g_Eng + g_Inf + g_Mat) / 3.0;
 	}
 }

@@ -22,12 +22,12 @@ public class Main {
                 int absence = Integer.valueOf(arrOfStr[5]);
                 student = new Student(firstName,lastName,gmat,geng,ginf,absence);
                 school.addStudent(student);
-
             }
             br.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         school.printList();
         System.out.println("\n");
         System.out.println("The best student: "

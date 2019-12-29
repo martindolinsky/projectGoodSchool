@@ -28,14 +28,13 @@ public class School implements SchoolStat {
 
 	public void printList() {
 		for (Student student:list) {
-			System.out.println(
-					"Name: " + student.getFullName()
-							+ " MAT: " + student.getG_Mat()
-							+ " ENG: " + student.getG_Eng()
-							+ " INF: " + student.getG_Inf()
-							+ " ABSENCE: " + student.getAbsence()
+			System.out.println("Name: "
+					+ student.getFullName()
+					+ " MAT: " + student.getG_Mat()
+					+ " ENG: " + student.getG_Eng()
+					+ " INF: " + student.getG_Inf()
+					+ " ABSENCE: " + student.getAbsence()
 			);
-
 		}
 	}
 
@@ -65,7 +64,6 @@ public class School implements SchoolStat {
 			countOfAbsence += list.get(i).getAbsence();
 		}
 		return (int) countOfAbsence / list.size();
-
 	}
 
 	@Override
@@ -166,6 +164,4 @@ public class School implements SchoolStat {
 		}
 		return array;
 	}
-
-
 }
