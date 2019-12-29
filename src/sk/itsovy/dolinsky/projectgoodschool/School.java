@@ -28,7 +28,8 @@ public class School implements SchoolStat {
 
 	public void printList() {
 		for (Student student:list) {
-			System.out.println("Name: "
+			System.out.println(
+					"Name: "
 					+ student.getFullName()
 					+ " MAT: " + student.getG_Mat()
 					+ " ENG: " + student.getG_Eng()
@@ -119,15 +120,14 @@ public class School implements SchoolStat {
 
 	@Override
 	public int getTheLowestAbsence() {
-		int n = list.size();
-		int[] array = new int[n];
+		int[] array = new int[list.size()];
 
-		for (int i = 0; i < n; i++) {
+		for (int i = 0; i < list.size(); i++) {
 			array[i] = list.get(i).getAbsence();
 		}
 
-		for (int i = 0; i < n - 1; i++) {
-			for (int j = i + 1; j < n; j++) {
+		for (int i = 0; i < list.size() - 1; i++) {
+			for (int j = i + 1; j < list.size(); j++) {
 				if (array[i] > array[j]) {
 					int temp = array[i];
 					array[i] = array[j];
@@ -152,7 +152,7 @@ public class School implements SchoolStat {
 		return list;
 	}
 
-	public double[] arraySelectionSort(double[] array) {
+	public void arraySelectionSort(double[] array) {
 		for (int i = 0; i < list.size() - 1; i++) {
 			for (int j = i + 1; j < list.size(); j++) {
 				if (array[i] > array[j]) {
@@ -162,6 +162,5 @@ public class School implements SchoolStat {
 				}
 			}
 		}
-		return array;
 	}
 }

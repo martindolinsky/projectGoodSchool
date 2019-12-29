@@ -30,14 +30,16 @@ public class Main {
 
         school.printList();
         System.out.println("\n");
-        System.out.println("The best student: "
+        System.out.println(
+                "The best student: "
                 + school.getTheBestStudent().getFullName()
                 + " MAT: " + school.getTheBestStudent().getG_Mat()
                 + " ENG: " + school.getTheBestStudent().getG_Eng()
                 + " INF: " + school.getTheBestStudent().getG_Inf()
                 + " ABSENCE: " + school.getTheBestStudent().getAbsence()
         );
-        System.out.println("The worst student: "
+        System.out.println(
+                "The worst student: "
                 + school.getTheWorstStudent().getFullName()
                 + " MAT: " + school.getTheWorstStudent().getG_Mat()
                 + " ENG: " + school.getTheWorstStudent().getG_Eng()
@@ -50,11 +52,11 @@ public class Main {
         System.out.println("Average Math grade: " + school.getAverageGradeFromMath());
         System.out.println("Average grade: " + school.getAverageGrade());
         System.out.println("\n");
-        System.out.println("Sorted by Last Name:");
+        System.out.println("Sorted by Last Name ASC: ");
         school.getListSortedByLastNameAsc();
         school.printList();
         System.out.println("\n");
-        System.out.println("Sorted by Absence:");
+        System.out.println("Sorted by Absence DESC:");
         school.getListSortedByAbsenceDesc();
         school.printList();
     }
