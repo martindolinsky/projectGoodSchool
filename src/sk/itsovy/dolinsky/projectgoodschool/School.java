@@ -1,7 +1,6 @@
 package sk.itsovy.dolinsky.projectgoodschool;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -47,7 +46,12 @@ public class School implements SchoolStat {
 
 	@Override
 	public int getAverageAbsence() {
-		return 0;
+		double countOfAbsence = 0;
+		for (int i = 0; i < list.size(); i++) {
+			countOfAbsence += list.get(i).getAbsence();
+		}
+		int averageAbsence = (int) countOfAbsence / list.size();
+		return averageAbsence;
 	}
 
 	@Override
@@ -67,7 +71,23 @@ public class School implements SchoolStat {
 
 	@Override
 	public int getTheLowestAbsence() {
-		return 0;
+		int n = list.size();
+		int[] array = new int[n];
+
+		for (int i = 0; i < n; i++) {
+			array[i] = list.get(i).getAbsence();
+		}
+
+		for (int i = 0; i < n - 1; i++) {
+			for (int j = i + 1; j < n; j++) {
+				if (array[i] > array[j]) {
+					int temp = array[i];
+					array[i] = array[j];
+					array[j] = temp;
+				}
+			}
+		}
+		return array[0];
 	}
 
 	@Override
@@ -85,7 +105,15 @@ public class School implements SchoolStat {
 
 	@Override
 	public List getListSortedByAbsenceDesc() {
-		return null;
+		for (int i = 0; i < list.size() - 1; i++) {
+			for (int j = i + 1; j < list.size(); j++) {
+				if (list.get(i).getAbsence() < list.get(j).getAbsence()) {
+					list.set(i, list.get(j));
+				}
+			}
+		}
+
+		return list;
 	}
 
 
