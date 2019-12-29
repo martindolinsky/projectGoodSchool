@@ -9,7 +9,6 @@ public class Student extends Person{
 	private byte g_Inf;
 	private int absence;
 
-
 	public Student(String firstName, String lastName, byte g_Mat, byte g_Eng, byte g_Inf, int absence) {
 		super(firstName, lastName);
 		this.g_Mat = g_Mat;
@@ -32,5 +31,9 @@ public class Student extends Person{
 
 	public int getAbsence() {
 		return absence;
+	}
+
+	public double getAverageGrade() {
+		return (g_Eng + g_Inf + g_Mat) / 3.0;
 	}
 }

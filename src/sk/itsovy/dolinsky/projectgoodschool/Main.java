@@ -20,34 +20,42 @@ public class Main {
                 byte geng = Byte.valueOf(arrOfStr[3]);
                 byte ginf = Byte.valueOf(arrOfStr[4]);
                 int absence = Integer.valueOf(arrOfStr[5]);
-
                 student = new Student(firstName,lastName,gmat,geng,ginf,absence);
-
                 school.addStudent(student);
-                System.out.println(student.getFullName()
-                        + " "
-                        + student.getG_Mat()
-                        + " "
-                        + student.getG_Eng()
-                        + " " + student.getG_Inf()
-                        + " " + student.getAbsence());
+
             }
             br.close();
-            System.out.println(school.getCount());
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println("\n");
-        System.out.println(school.getAverageAbsence());
-        System.out.println(school.getTheLowestAbsence());
-        school.getListSortedByAbsenceDesc();
         school.printList();
-
         System.out.println("\n");
+        System.out.println("The best student: "
+                + school.getTheBestStudent().getFullName()
+                + " MAT: " + school.getTheBestStudent().getG_Mat()
+                + " ENG: " + school.getTheBestStudent().getG_Eng()
+                + " INF: " + school.getTheBestStudent().getG_Inf()
+                + " ABSENCE: " + school.getTheBestStudent().getAbsence()
+        );
+        System.out.println("The worst student: "
+                + school.getTheWorstStudent().getFullName()
+                + " MAT: " + school.getTheWorstStudent().getG_Mat()
+                + " ENG: " + school.getTheWorstStudent().getG_Eng()
+                + " INF: " + school.getTheWorstStudent().getG_Inf()
+                + " ABSENCE: " + school.getTheWorstStudent().getAbsence()
+        );
+        System.out.println("Count of students: " + school.getCount());
+        System.out.println("Average absence: " + school.getAverageAbsence());
+        System.out.println("The Lowest Absence: " + school.getTheLowestAbsence());
+        System.out.println("Average Math grade: " + school.getAverageGradeFromMath());
+        System.out.println("Average grade: " + school.getAverageGrade());
+        System.out.println("\n");
+        System.out.println("Sorted by Last Name:");
         school.getListSortedByLastNameAsc();
         school.printList();
-
+        System.out.println("\n");
+        System.out.println("Sorted by Absence:");
+        school.getListSortedByAbsenceDesc();
+        school.printList();
     }
-
-
 }
